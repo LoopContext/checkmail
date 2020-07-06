@@ -14,7 +14,7 @@ var (
 		{mail: "cmelgarejodev@gmail.com", format: true, account: true},
 		{mail: "cmelgarejo.dev@gmail.com", format: true, account: true},
 		{mail: "unsupported@gmail2.com", format: true, account: false},
-		{mail: "cmelgarejo@loopcontext.com ", format: false, account: false},
+		{mail: "cmelgarejo@loopcontext.com", format: true, account: false},
 		{mail: " info@loopcontext.com", format: false, account: false},
 		{mail: "info@loopcontext.com ", format: false, account: false},
 		{mail: "test@thisdomainshouldnotexistever.com", format: true, account: false},
@@ -47,7 +47,6 @@ func TestValidateHost(t *testing.T) {
 		if !s.format {
 			continue
 		}
-
 		err := ValidateHost(s.mail)
 		if err != nil && s.account == true {
 			t.Errorf(`"%s" => unexpected error: %q`, s.mail, err)
