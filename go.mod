@@ -1,3 +1,3 @@
 module github.com/loopcontext/checkmail
 
-go 1.14
+go 1.15
